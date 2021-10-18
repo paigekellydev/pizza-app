@@ -7,10 +7,10 @@ export default function WelcomePage() {
         <div id="welcome-page" className="page">
             <h2>Welcome</h2>
             <Button variant="outline-primary" className="welcome-page-button">
-                <Link exact to="/order">Order Online</Link>
+                <Link to="/order">Order Online</Link>
             </Button>
             <Button variant="outline-primary" className="welcome-page-button">
-                <Link exact to="/contact">Contact</Link>
+                <Link to="/contact">Contact</Link>
             </Button>
         </div>
     )

@@ -1,9 +1,14 @@
 import React from 'react'
 
 export default function OrderForm() {
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log('submit working')
+    }
     return (
-        <div>
-            
-        </div>
+        <form onSubmit={handleSubmit}>
+            <button type="submit">Submit</button>
+        </form>
     )
 }
