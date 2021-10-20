@@ -3,7 +3,7 @@ import DeliveryOptions from './DeliveryOptions'
 import PizzaSizeOptions from './PizzaSizeOptions'
 import ToppingInput from './ToppingInput'
 
-export default function OrderForm({ addPrice }) {
+export default function OrderForm({ displayPrice }) {
 
     const [delivery, setDelivery] = useState([]);
     const [pizzaSizes, setPizzaSizes] = useState([]);
@@ -38,20 +38,26 @@ export default function OrderForm({ addPrice }) {
         console.log('submit working')
     }
     
-    const addTopping = (selectionToUpdate, item) => {
+    const addSelection = (selectionToUpdate, item) => {
         let copyOfChosenToppings = chosenSelections[selectionToUpdate]
         setChosenSelections(
             { 
                 ...chosenSelections, 
                 selectionToUpdate: [...copyOfChosenToppings, item]
-            })
+            }
+        )
     }
 
-    const removeTopping = (topping) => {
-        const filteredToppings = chosenSelections.chosenToppings.filter(item =>
-            (item.name !== topping.name)
+    const removeSelection = (selectionToUpdate, item) => {
+        const filteredSelection = chosenSelections[selectionToUpdate].filter(item =>
+            (item.name !== item.name)
         )
-        setChosenSelections({...chosenSelections, chosenToppings: filteredToppings})
+        setChosenSelections(
+            { 
+                ...chosenSelections, 
+                selectionToUpdate: filteredSelection
+            }
+        )
     }
 
     const displayToppings = () => {
@@ -62,8 +68,8 @@ export default function OrderForm({ addPrice }) {
                     topping={ topping }
                     chosenSelections={ chosenSelections }
                     selectionToUpdate="chosenToppings"
-                    addTopping={ addTopping }
-                    removeTopping={ removeTopping }
+                    addSelection={ addSelection }
+                    removeSelection={ removeSelection }
                 />
             )
         })
@@ -72,18 +78,14 @@ export default function OrderForm({ addPrice }) {
     const totalPrice = () => {
         let totalPrice = 0
         let copyOfChosenSelections = chosenSelections
-        console.log(copyOfChosenSelections)
-
-        // Object.keys(copyOfChosenSelections).forEach(selection => {
-        //     console.log(selection)
-        // })
+ 
         for (let selection in copyOfChosenSelections) {
             copyOfChosenSelections[selection].forEach(item => {
                 totalPrice += item.price
             })
         }
         console.log(totalPrice)
-        // addPrice(totalPrice)
+        displayPrice(totalPrice)
     }
 
     return (
