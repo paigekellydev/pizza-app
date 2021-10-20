@@ -6,7 +6,7 @@ export default function ToppingInput({ topping, addTopping, removeTopping }) {
 
     const handleChange = (event) => {
         if (!isChecked) {
-            addTopping(topping)
+            addTopping("chosenToppings", topping)
             setIsChecked(true)
         } else {
             removeTopping(topping)

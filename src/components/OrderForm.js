@@ -5,10 +5,14 @@ import ToppingInput from './ToppingInput'
 
 export default function OrderForm({ addPrice }) {
 
-    const [chosenToppings, setChosenToppings] = useState([]);
     const [delivery, setDelivery] = useState([]);
     const [pizzaSizes, setPizzaSizes] = useState([]);
     const [toppings, setToppings] = useState([]);
+    const [chosenSelections, setChosenSelections] = useState({
+        chosenDelivery: [],
+        chosenPizzaSize: [],
+        chosenToppings: []
+    });
 
     // fetches data from db.json, must run npx json-server --watch db.json
     // in order to fetch from this URL, make sure you're on port 3000
@@ -19,6 +23,13 @@ export default function OrderForm({ addPrice }) {
                 setDelivery(options.delivery)
                 setPizzaSizes(options.pizzaSizes)
                 setToppings(options.toppings)
+                setChosenSelections(
+                    {
+                        ...chosenSelections, 
+                        chosenDelivery: [options.delivery[0]],
+                        chosenPizzaSize: [options.pizzaSizes[0]]
+                    }
+                )
             })
     }, [])
 
@@ -27,15 +38,20 @@ export default function OrderForm({ addPrice }) {
         console.log('submit working')
     }
     
-    const addTopping = (topping) => {
-        setChosenToppings([...chosenToppings, topping])
+    const addTopping = (selectionToUpdate, item) => {
+        let copyOfChosenToppings = chosenSelections[selectionToUpdate]
+        setChosenSelections(
+            { 
+                ...chosenSelections, 
+                selectionToUpdate: [...copyOfChosenToppings, item]
+            })
     }
 
     const removeTopping = (topping) => {
-        const filteredToppings = chosenToppings.filter(item =>
+        const filteredToppings = chosenSelections.chosenToppings.filter(item =>
             (item.name !== topping.name)
         )
-        setChosenToppings(filteredToppings)
+        setChosenSelections({...chosenSelections, chosenToppings: filteredToppings})
     }
 
     const displayToppings = () => {
@@ -44,6 +60,8 @@ export default function OrderForm({ addPrice }) {
                 <ToppingInput
                     key={`${topping.name}${index}`}
                     topping={ topping }
+                    chosenSelections={ chosenSelections }
+                    selectionToUpdate="chosenToppings"
                     addTopping={ addTopping }
                     removeTopping={ removeTopping }
                 />
@@ -51,21 +69,29 @@ export default function OrderForm({ addPrice }) {
         })
     }
 
-    const addToppingPrices = () => {
+    const totalPrice = () => {
         let totalPrice = 0
-        
-        return chosenToppings.forEach(topping => {
-            return totalPrice + topping.price
-        })
+        let copyOfChosenSelections = chosenSelections
+        console.log(copyOfChosenSelections)
+
+        // Object.keys(copyOfChosenSelections).forEach(selection => {
+        //     console.log(selection)
+        // })
+        for (let selection in copyOfChosenSelections) {
+            copyOfChosenSelections[selection].forEach(item => {
+                totalPrice += item.price
+            })
+        }
         console.log(totalPrice)
-        addPrice(totalPrice)
+        // addPrice(totalPrice)
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <DeliveryOptions addPrice={ addPrice }/>
-            <PizzaSizeOptions addPrice={ addPrice }/>
+            <DeliveryOptions />
+            <PizzaSizeOptions />
             {displayToppings()}
+            {totalPrice()}
             <button type="submit">Submit</button>
         </form>
     )
