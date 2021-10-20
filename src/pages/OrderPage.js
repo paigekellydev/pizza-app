@@ -7,6 +7,7 @@ export default function OrderPage() {
     
     const displayPrice = (price) => {
         setTotalPrice(price.toFixed(2))
+        console.log(totalPrice)
     }
 
     return (

@@ -8,11 +8,7 @@ export default function OrderForm({ displayPrice }) {
     const [delivery, setDelivery] = useState([]);
     const [pizzaSizes, setPizzaSizes] = useState([]);
     const [toppings, setToppings] = useState([]);
-    const [chosenSelections, setChosenSelections] = useState({
-        chosenDelivery: [],
-        chosenPizzaSize: [],
-        chosenToppings: []
-    });
+    const [chosenSelections, setChosenSelections] = useState({});
 
     // fetches data from db.json, must run npx json-server --watch db.json
     // in order to fetch from this URL, make sure you're on port 3000
@@ -24,10 +20,10 @@ export default function OrderForm({ displayPrice }) {
                 setPizzaSizes(options.pizzaSizes)
                 setToppings(options.toppings)
                 setChosenSelections(
-                    {
-                        ...chosenSelections, 
+                    { 
                         chosenDelivery: [options.delivery[0]],
-                        chosenPizzaSize: [options.pizzaSizes[0]]
+                        chosenPizzaSize: [options.pizzaSizes[0]],
+                        chosenToppings: []
                     }
                 )
             })
@@ -39,25 +35,28 @@ export default function OrderForm({ displayPrice }) {
     }
     
     const addSelection = (selectionToUpdate, item) => {
-        let copyOfChosenToppings = chosenSelections[selectionToUpdate]
+        const copyOfChosenSelections = chosenSelections
         setChosenSelections(
             { 
                 ...chosenSelections, 
-                selectionToUpdate: [...copyOfChosenToppings, item]
+                [selectionToUpdate]: [...chosenSelections[selectionToUpdate], item]
             }
         )
+        console.log(chosenSelections[selectionToUpdate])
     }
 
     const removeSelection = (selectionToUpdate, item) => {
-        const filteredSelection = chosenSelections[selectionToUpdate].filter(item =>
-            (item.name !== item.name)
-        )
-        setChosenSelections(
-            { 
-                ...chosenSelections, 
-                selectionToUpdate: filteredSelection
-            }
-        )
+        let copyOfChosenSelections = chosenSelections
+        console.log(copyOfChosenSelections)
+        // const filteredSelection = copyOfChosenSelections[selectionToUpdate].filter(selection =>
+        //     (item !== selection)
+        // )
+        // setChosenSelections(
+        //     { 
+        //         ...chosenSelections, 
+        //         selectionToUpdate: filteredSelection
+        //     }
+        // )
     }
 
     const displayToppings = () => {
@@ -84,8 +83,9 @@ export default function OrderForm({ displayPrice }) {
                 totalPrice += item.price
             })
         }
-        console.log(totalPrice)
-        displayPrice(totalPrice)
+
+        return totalPrice
+        // displayPrice(totalPrice)
     }
 
     return (
