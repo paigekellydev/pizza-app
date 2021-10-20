@@ -46,17 +46,16 @@ export default function OrderForm({ displayPrice }) {
     }
 
     const removeSelection = (selectionToUpdate, item) => {
-        let copyOfChosenSelections = chosenSelections
-        console.log(copyOfChosenSelections)
-        // const filteredSelection = copyOfChosenSelections[selectionToUpdate].filter(selection =>
-        //     (item !== selection)
-        // )
-        // setChosenSelections(
-        //     { 
-        //         ...chosenSelections, 
-        //         selectionToUpdate: filteredSelection
-        //     }
-        // )
+        const copyOfChosenSelections = chosenSelections
+        const filteredSelection = copyOfChosenSelections[selectionToUpdate].filter(selection =>
+            (item !== selection)
+        )
+        setChosenSelections(
+            { 
+                ...chosenSelections, 
+                [selectionToUpdate]: filteredSelection
+            }
+        )
     }
 
     const displayToppings = () => {
