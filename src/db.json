@@ -1,0 +1,66 @@
+{
+    "options":
+        {
+
+            "toppings": 
+                [   
+                    {
+                        "name": "parmesan",
+                        "price": 0.25,
+                        "displayName": "Parmesan Cheese"
+                    },
+                    {
+                        "name": "goatCheese",
+                        "price": 0.50,
+                        "displayName": "Goat Cheese"
+                    },
+                    {
+                        "name": "arugula",
+                        "price": 0.25,
+                        "displayName": "Arugula"
+                    },
+                    {
+                        "name": "mushrooms",
+                        "price": 0.25,
+                        "displayName": "Mushrooms"
+                    },
+                    {
+                        "name": "prosciutto",
+                        "price": 0.50,
+                        "displayName": "Prosciutto"
+                    }
+                ],
+            "delivery":
+                [
+                    {
+                        "type": "pickUp",
+                        "displayName": "Pick up",
+                        "price": 0
+                    },
+                    {
+                        "type": "delivery",
+                        "displayName": "Delivery",
+                        "price": 10
+                    }
+                ],
+            "pizzaSizes": 
+                [
+                    {
+                        "type": "small",
+                        "displayName": "Small: 16\" Pizza $18",
+                        "price": 18
+                    },
+                    {
+                        "type": "medium",
+                        "displayName": "Medium: 18\" Pizza $22",
+                        "price": 22
+                    },
+                    {
+                        "type": "large",
+                        "displayName": "Large: 22\" Pizza $26",
+                        "price": 18
+                    }
+                ]
+        }
+    
+}
