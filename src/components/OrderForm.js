@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import DeliveryOptions from './DeliveryOptions'
 import PizzaSizeOptions from './PizzaSizeOptions'
+import ToppingContainer from './ToppingContainer';
 import ToppingInput from './ToppingInput'
 
 export default function OrderForm({ displayPrice }) {
@@ -35,16 +36,15 @@ export default function OrderForm({ displayPrice }) {
     }
     
     const addSelection = (selectionToUpdate, item) => {
-        const copyOfChosenSelections = chosenSelections
         setChosenSelections(
             { 
                 ...chosenSelections, 
                 [selectionToUpdate]: [...chosenSelections[selectionToUpdate], item]
             }
         )
-        console.log(chosenSelections[selectionToUpdate])
+        localStorage.setItem("chosenSelections", JSON.stringify(chosenSelections))
     }
-
+    
     const removeSelection = (selectionToUpdate, item) => {
         const copyOfChosenSelections = chosenSelections
         const filteredSelection = copyOfChosenSelections[selectionToUpdate].filter(selection =>
@@ -58,19 +58,14 @@ export default function OrderForm({ displayPrice }) {
         )
     }
 
-    const displayToppings = () => {
-        return toppings.map((topping, index) => {
-            return (
-                <ToppingInput
-                    key={`${topping.name}${index}`}
-                    topping={ topping }
-                    chosenSelections={ chosenSelections }
-                    selectionToUpdate="chosenToppings"
-                    addSelection={ addSelection }
-                    removeSelection={ removeSelection }
-                />
-            )
-        })
+    const displayDeliveryOptions = () => {
+
+        return (
+            <select id="delivery-option-section">
+                <option value="pick-up-option">Pick-up at store</option>
+                <option value="delivery-option">Delivery</option>
+            </select>
+        )
     }
 
     const totalPrice = () => {
@@ -83,15 +78,29 @@ export default function OrderForm({ displayPrice }) {
             })
         }
 
-        return totalPrice
-        // displayPrice(totalPrice)
+        return <p>{totalPrice}</p>
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <DeliveryOptions />
-            <PizzaSizeOptions />
-            {displayToppings()}
+            <DeliveryOptions 
+                delivery={delivery} 
+                addSelection={addSelection} 
+                removeSelection={removeSelection}
+                chosenSelections={chosenSelections}
+            />
+            <PizzaSizeOptions 
+                pizzaSizes={pizzaSizes} 
+                addSelection={addSelection} 
+                removeSelection={removeSelection}
+                chosenSelections={chosenSelections}
+            />
+            <ToppingContainer 
+                toppings={toppings} 
+                addSelection={addSelection} 
+                removeSelection={removeSelection}
+                chosenSelections={chosenSelections}
+            />
             {totalPrice()}
             <button type="submit">Submit</button>
         </form>
