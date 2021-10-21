@@ -8,7 +8,14 @@ export default function OrderForm({ displayPrice }) {
     const [delivery, setDelivery] = useState([]);
     const [pizzaSizes, setPizzaSizes] = useState([]);
     const [toppings, setToppings] = useState([]);
-    const [chosenSelections, setChosenSelections] = useState({});
+    const [chosenSelections, setChosenSelections] = 
+        useState(
+            {
+                chosenDelivery: [],
+                chosenPizzaSize: [],
+                chosenToppings: []
+            }
+        );
 
     // fetches data from db.json, must run npx json-server --watch db.json
     // in order to fetch from this URL, make sure you're on port 3000
@@ -20,10 +27,10 @@ export default function OrderForm({ displayPrice }) {
                 setPizzaSizes(options.pizzaSizes)
                 setToppings(options.toppings)
                 setChosenSelections(
-                    { 
-                        chosenDelivery: [options.delivery[0]],
-                        chosenPizzaSize: [options.pizzaSizes[0]],
-                        chosenToppings: []
+                    {
+                        ...chosenSelections, 
+                        chosenDelivery: [delivery[0]],
+                        chosenPizzaSize: [pizzaSizes[0]]
                     }
                 )
             })
@@ -35,12 +42,25 @@ export default function OrderForm({ displayPrice }) {
     }
     
     const addSelection = (selectionToUpdate, item) => {
-        setChosenSelections(
-            { 
-                ...chosenSelections, 
-                [selectionToUpdate]: [...chosenSelections[selectionToUpdate], item]
-            }
-        )
+        // let selection = "chosenDelivery"
+        // console.log(chosenSelections[selection])
+        console.log(selectionToUpdate)
+        if (selectionToUpdate === "chosenToppings") {
+            setChosenSelections(
+                { 
+                    ...chosenSelections, 
+                    [selectionToUpdate]: [...chosenSelections[selectionToUpdate], item]
+                }
+            )
+        } else {
+            setChosenSelections(
+                { 
+                    ...chosenSelections, 
+                    [selectionToUpdate]: [item]
+                }
+            )
+
+        }
         localStorage.setItem("chosenSelections", JSON.stringify(chosenSelections))
     }
     
@@ -62,8 +82,11 @@ export default function OrderForm({ displayPrice }) {
         let copyOfChosenSelections = chosenSelections
  
         for (let selection in copyOfChosenSelections) {
+            console.log(copyOfChosenSelections[selection])
             copyOfChosenSelections[selection].forEach(item => {
-                totalPrice += item.price
+                if (item) { 
+                    totalPrice += item.price
+                }
             })
         }
 
