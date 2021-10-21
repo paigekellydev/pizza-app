@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import ToppingInput from './ToppingInput'
 
-export default function ToppingContainer({toppings, addSelection, removeSelection}) {
+export default function ToppingContainer({toppings, addPrice, removePrice }) {
 
     const [selectedToppings, setSelectedToppings] = useState([]);
     localStorage.setItem('selectedToppings', JSON.stringify(selectedToppings))
 
     const addTopping = (topping) => {
         setSelectedToppings([...selectedToppings, topping])
+        addPrice(topping.price)
     }
     
     const removeTopping = (topping) => {
@@ -16,6 +17,7 @@ export default function ToppingContainer({toppings, addSelection, removeSelectio
             (selection !== topping)
         )
         setSelectedToppings(filteredSelection)
+        removePrice(topping.price)
     }
     
     const displayToppings = () => {
@@ -34,7 +36,7 @@ export default function ToppingContainer({toppings, addSelection, removeSelectio
             })
         }
     }
-    
+
     return (
         <section id="topping-container" className="form-section">
             {displayToppings()}

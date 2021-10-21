@@ -6,7 +6,7 @@ import ToppingContainer from './ToppingContainer';
 export default function OrderForm({ displayPrice }) {
 
     const [allOptions, setAllOptions] = useState({});
-
+    const [totalPrice, setTotalPrice] = useState(0)
     // fetches data from db.json, must run npx json-server --watch db.json
     // in order to fetch from this URL, make sure you're on port 3000
     useEffect(() => {
@@ -29,29 +29,30 @@ export default function OrderForm({ displayPrice }) {
             })
         }
     }
+
+    const addPrice = (price) => {
+        setTotalPrice(totalPrice + price)
+    }
+
+    const removePrice = (price) => {
+        setTotalPrice(totalPrice - price)
+    }
     
-
-    // const totalPrice = () => {
-    //     let totalPrice = 0
-    //     let copyOfChosenSelections = chosenSelections
- 
-    //     for (let selection in copyOfChosenSelections) {
-    //         copyOfChosenSelections[selection].forEach(item => {
-    //             if (item) { 
-    //                 totalPrice += item.price
-    //             }
-    //         })
-    //     }
-
-    //     return <p>${totalPrice.toFixed(2)}</p>
-    // }
+    const displayTotalPrice = () => {
+        return <p>${totalPrice.toFixed(2)}</p>
+    }
 
     return (
         <form onSubmit={handleSubmit}>
-            <DeliveryContainer delivery={allOptions.delivery} displayOptions={displayOptions}/>
-            <PizzaSizeContainer pizzaSizes={allOptions.pizzaSizes} displayOptions={displayOptions}/>
-            <ToppingContainer toppings={allOptions.toppings} />
-            {/* {totalPrice()} */}
+            <DeliveryContainer 
+                delivery={allOptions.delivery}
+                displayOptions={displayOptions}
+                addPrice={addPrice}
+                removePrice={removePrice}
+            />
+            <PizzaSizeContainer pizzaSizes={allOptions.pizzaSizes} displayOptions={displayOptions} addPrice={addPrice}/>
+            <ToppingContainer toppings={allOptions.toppings} addPrice={addPrice} removePrice={removePrice}/>
+            {displayTotalPrice()}
             <button type="submit">Submit</button>
         </form>
     )
