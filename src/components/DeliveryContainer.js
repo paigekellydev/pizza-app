@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 
-export default function DeliveryOptionForm({delivery, chosenSelections, addSelection, removeSelection}) {
+export default function DeliveryContainer({delivery, chosenSelections, addSelection, removeSelection}) {
     
     const [selected, setSelected] = useState(delivery[0])
     

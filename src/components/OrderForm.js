@@ -1,8 +1,7 @@
 import { React, useEffect, useState } from 'react'
-import DeliveryOptions from './DeliveryOptions'
-import PizzaSizeOptions from './PizzaSizeOptions'
+import DeliveryContainer from './DeliveryContainer'
+import PizzaSizeContainer from './PizzaSizeContainer'
 import ToppingContainer from './ToppingContainer';
-import ToppingInput from './ToppingInput'
 
 export default function OrderForm({ displayPrice }) {
 
@@ -73,13 +72,13 @@ export default function OrderForm({ displayPrice }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <DeliveryOptions 
+            <DeliveryContainer
                 delivery={delivery} 
                 addSelection={addSelection} 
                 removeSelection={removeSelection}
                 chosenSelections={chosenSelections}
             />
-            <PizzaSizeOptions 
+            <PizzaSizeContainer
                 pizzaSizes={pizzaSizes} 
                 addSelection={addSelection} 
                 removeSelection={removeSelection}
