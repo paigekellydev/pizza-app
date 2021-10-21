@@ -38,10 +38,7 @@ export default function OrderForm({ displayPrice }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            {/* <DeliveryContainer
-                addSelection={addSelection} 
-                removeSelection={removeSelection}
-            /> */}
+            <DeliveryContainer delivery={allOptions.delivery} />
             {/* <PizzaSizeContainer
                 addSelection={addSelection} 
                 removeSelection={removeSelection}

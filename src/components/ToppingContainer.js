@@ -19,6 +19,8 @@ export default function ToppingContainer({toppings, addSelection, removeSelectio
     }
     
     const displayToppings = () => {
+        // if toppings prop is valid, return topping input options for each topping
+        // toppings is derived from state in OrderForm allOptions.toppings
         if (toppings) {
             return toppings.map((topping, index) => {
                 return (
