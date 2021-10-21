@@ -1,22 +1,23 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 
-export default function PizzaSizeOptions({pizzaSizes, chosenSelections, addSelection, removeSelection}) {
+export default function PizzaSizeOptions({ pizzaSizes, displayOptions }) {
     
-    const [selected, setSelected] = useState(pizzaSizes[0])
+    const [pizzaSizeSelected, setPizzaSizeSelected] = useState([])
+    localStorage.setItem('pizzaSizeSelected', JSON.stringify([pizzaSizeSelected]))
     
-    const displayOptions = () => {
-        return pizzaSizes.map(size => {
-            return (
-                <option className="form-option" key={size.type} value={size.type}>
-                    {size.displayName}
-                </option>
-            ) 
-        })
+    useEffect(() => {
+        if (pizzaSizes) {
+            setPizzaSizeSelected(pizzaSizes[0])
+        }
+    }, [pizzaSizes])
+
+    const handleChange = (event) => {
+        setPizzaSizeSelected(pizzaSizes[event.target.value])
     }
 
     return (
-        <select id="pizza-size-option-section" className="form-select">
-            {displayOptions()}
+        <select id="pizza-size-option-section" className="form-select" onChange={handleChange}>
+            {displayOptions(pizzaSizes)}
         </select>
     )
 }

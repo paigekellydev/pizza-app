@@ -1,21 +1,15 @@
 import { React, useEffect, useState } from 'react'
 
-export default function DeliveryContainer({ delivery }) {
+export default function DeliveryContainer({ delivery, displayOptions }) {
 
     const [deliverySelected, setDeliverySelected] = useState([])
     localStorage.setItem('deliverySelected', JSON.stringify([deliverySelected]))
-
-    useEffect(() => setDeliverySelected(delivery[0]), [])
     
-    const displayOptions = () => {
+    useEffect(() => {
         if (delivery) {
-            return delivery.map((option, index) => {
-                return (
-                    <option key={option.type} value={index}>{option.displayName}</option>
-                ) 
-            })
+            setDeliverySelected(delivery[0])
         }
-    }
+    }, [delivery])
 
     const handleChange = (event) => {
         setDeliverySelected(delivery[event.target.value])
@@ -23,7 +17,7 @@ export default function DeliveryContainer({ delivery }) {
 
     return (
         <select id="delivery-option-section" className="form-select" onChange={handleChange}>
-            {displayOptions()}
+            {displayOptions(delivery)}
         </select>
     )
 }

@@ -19,6 +19,16 @@ export default function OrderForm({ displayPrice }) {
         event.preventDefault()
         console.log('submit working')
     }
+
+    const displayOptions = (arrayOfItems) => {
+        if (arrayOfItems) {
+            return arrayOfItems.map((option, index) => {
+                return (
+                    <option key={option.type} value={index}>{option.displayName}</option>
+                ) 
+            })
+        }
+    }
     
 
     // const totalPrice = () => {
@@ -38,11 +48,8 @@ export default function OrderForm({ displayPrice }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <DeliveryContainer delivery={allOptions.delivery} />
-            {/* <PizzaSizeContainer
-                addSelection={addSelection} 
-                removeSelection={removeSelection}
-            /> */}
+            <DeliveryContainer delivery={allOptions.delivery} displayOptions={displayOptions}/>
+            <PizzaSizeContainer pizzaSizes={allOptions.pizzaSizes} displayOptions={displayOptions}/>
             <ToppingContainer toppings={allOptions.toppings} />
             {/* {totalPrice()} */}
             <button type="submit">Submit</button>
