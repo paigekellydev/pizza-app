@@ -58,16 +58,6 @@ export default function OrderForm({ displayPrice }) {
         )
     }
 
-    const displayDeliveryOptions = () => {
-
-        return (
-            <select id="delivery-option-section">
-                <option value="pick-up-option">Pick-up at store</option>
-                <option value="delivery-option">Delivery</option>
-            </select>
-        )
-    }
-
     const totalPrice = () => {
         let totalPrice = 0
         let copyOfChosenSelections = chosenSelections

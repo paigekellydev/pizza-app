@@ -4,7 +4,6 @@ import ToppingInput from './ToppingInput'
 export default function ToppingContainer({toppings, chosenSelections, addSelection, removeSelection}) {
     
     const displayToppings = () => {
-        console.log(toppings)
         return toppings.map((topping, index) => {
             return (
                 <ToppingInput

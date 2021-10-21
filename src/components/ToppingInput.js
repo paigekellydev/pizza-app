@@ -15,8 +15,9 @@ export default function ToppingInput({ topping, addSelection, selectionToUpdate,
     }
 
     return (
-        <label>
+        <label className="form-label">
             <input
+                className="form-input"
                 name={ topping.name }
                 type="checkbox"
                 checked={ isChecked }

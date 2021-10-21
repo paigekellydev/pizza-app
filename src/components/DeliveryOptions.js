@@ -1,10 +1,20 @@
-import React from 'react'
+import { React, useState } from 'react'
 
-export default function DeliveryOptionForm() {
+export default function DeliveryOptionForm({delivery, chosenSelections, addSelection, removeSelection}) {
+    
+    const [selected, setSelected] = useState(delivery[0])
+    
+    const displayOptions = () => {
+        return delivery.map(option => {
+            return (
+                <option key={option.type} value={option.type}>{option.displayName}</option>
+            ) 
+        })
+    }
+
     return (
-        <select id="delivery-option-section">
-            <option value="pick-up-option">Pick-up at store</option>
-            <option value="delivery-option">Delivery</option>
+        <select id="delivery-option-section" className="form-select">
+            {displayOptions()}
         </select>
     )
 }

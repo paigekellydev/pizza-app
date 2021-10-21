@@ -1,11 +1,22 @@
-import React from 'react'
+import { React, useState } from 'react'
 
-export default function PizzaSizeOptions({ addPrice }) {
+export default function PizzaSizeOptions({pizzaSizes, chosenSelections, addSelection, removeSelection}) {
+    
+    const [selected, setSelected] = useState(pizzaSizes[0])
+    
+    const displayOptions = () => {
+        return pizzaSizes.map(size => {
+            return (
+                <option className="form-option" key={size.type} value={size.type}>
+                    {size.displayName}
+                </option>
+            ) 
+        })
+    }
+
     return (
-        <select id="pizza-size-option-section">
-            <option value="small">Small: 16" Pizza $18</option>
-            <option value="medium">Medium: 18" Pizza $22</option>
-            <option value="large">Large: 22" Pizza $26</option>
+        <select id="pizza-size-option-section" className="form-select">
+            {displayOptions()}
         </select>
     )
 }
