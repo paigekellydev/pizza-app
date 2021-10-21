@@ -1,15 +1,15 @@
 import { React, useState } from 'react'
 
-export default function ToppingInput({ topping, addSelection, selectionToUpdate, removeSelection }) {
+export default function ToppingInput({ topping, addTopping, removeTopping }) {
 
     const [isChecked, setIsChecked] = useState(false)
 
     const handleChange = (event) => {
         if (!isChecked) {
-            addSelection(selectionToUpdate, topping)
+            addTopping(topping)
             setIsChecked(true)
         } else {
-            removeSelection(selectionToUpdate, topping)
+            removeTopping(topping)
             setIsChecked(false)
         }
     }
@@ -25,7 +25,7 @@ export default function ToppingInput({ topping, addSelection, selectionToUpdate,
                 value={ topping.name }
             />
             { topping.displayName }
-            { topping.price }
+            ${ topping.price.toFixed(2) }
         </label>
     )
 }
