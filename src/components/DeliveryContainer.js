@@ -19,17 +19,19 @@ export default function DeliveryContainer({ delivery, displayOptions, addPrice, 
         const selection = delivery[event.target.value]
         const price = selection.price
         setDeliverySelected(selection)
-        if (deliveryPrice === price) {
-            removePrice(price)
+
+        if(deliveryPrice > 0) {
+            removePrice(deliveryPrice)
+            setDeliveryPrice(price)
         } else {
             addPrice(price)
+            setDeliveryPrice(price)
         }
     }
 
     return (
         <select id="delivery-option-section" className="form-select" onChange={handleChange}>
             {displayOptions(delivery)}
-            {/* {addPrice(deliveryPrice)} */}
         </select>
     )
 }
