@@ -20,10 +20,9 @@ const defaultStore = {
 function reducer(store, action) {
     switch(action.type) {
         case "ADD_ITEM":
-            return {...store, selections: [...store.selections, item]}
-
+            return {...store, selections: [...store.selections, action.payload]}
         case "REMOVE_ITEM":
-            const filteredSelections = store.selections.filter(item => item !== action.item)
+            const filteredSelections = store.selections.filter(item=> item !== action.payload)
             return {...store, 
                 selections: filteredSelections
             }  
@@ -31,4 +30,6 @@ function reducer(store, action) {
             return store;
     }
 }
+
+export const store = createStore(reducer, defaultStore);
 

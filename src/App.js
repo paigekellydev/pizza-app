@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Provider from 'react-redux';
+import { Provider } from 'react-redux';
 import { store } from './store';
 
 import Header from './components/Header';
@@ -14,7 +14,8 @@ import ContactPage from './pages/ContactPage';
 function App() {
 
   return (
-    <Provider store={store}> // Provider just says everything inside will be in store
+    // Provider just says everything inside will be in store
+    <Provider store={store}>
       <Router>
         <div id="App" className="App">
           <link

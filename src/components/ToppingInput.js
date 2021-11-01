@@ -1,15 +1,18 @@
 import { React, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function ToppingInput({ topping, addTopping, removeTopping }) {
 
-    const [isChecked, setIsChecked] = useState(false)
+    const [isChecked, setIsChecked] = useState(false);
+    const selections = useSelector(store => store.selections); // most people abbreviate store with s // s.selections
+    const dispatch = useDispatch();
 
     const handleChange = (event) => {
         if (!isChecked) {
-            addTopping(topping)
+            dispatch({type: "ADD_ITEM", payload: topping})
             setIsChecked(true)
         } else {
-            removeTopping(topping)
+            dispatch({type: "REMOVE_ITEM", payload: topping})
             setIsChecked(false)
         }
     }
@@ -25,7 +28,7 @@ export default function ToppingInput({ topping, addTopping, removeTopping }) {
                 value={ topping.name }
             />
             { topping.displayName }
-            ${ topping.price.toFixed(2) }
+            {/* ${ topping.price.toFixed(2) } */}
         </label>
     )
 }

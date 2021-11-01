@@ -51,7 +51,7 @@ export default function OrderForm({ displayPrice }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            {addTotalPrice()}
+            {/* {addTotalPrice()} */}
             <DeliveryContainer 
                 delivery={allOptions.delivery}
                 displayOptions={displayOptions}
