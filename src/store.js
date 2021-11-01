@@ -1,31 +1,42 @@
 import { createStore } from 'redux';
 
 const defaultStore = {
-    selections: [
-        {
-            "type": "pickUp",
-            "displayName": "Pick up",
-            "price": 0
-        },
-        {
-            "type": "small",
-            "displayName": "Small: 16\" Pizza $18",
-            "price": 18
-        }
-    ]
+
+    delivery: {
+        type: "pickUp",
+        displayName: "Pick up",
+        price: 0,
+    },
+
+    pizzaSize: {
+        type: "small",
+        displayName: "Small: 16\" Pizza $18",
+        price: 18
+    },
+
+    toppings: []
 }
+
 
 // actions have type and maybe payload
 // does not need to be named type or payload
 function reducer(store, action) {
     switch(action.type) {
         case "ADD_ITEM":
-            return {...store, selections: [...store.selections, action.payload]}
+            return {...store, toppings: [...store.toppings, action.payload ]}
         case "REMOVE_ITEM":
-            const filteredSelections = store.selections.filter(item=> item !== action.payload)
+            const filteredToppings = store.toppings.filter(item => item !== action.payload)
             return {...store, 
-                selections: filteredSelections
-            }  
+                toppings: filteredToppings
+            }
+        case "CHANGE_DELIVERY":
+            return {...store,
+                delivery: action.payload
+            }
+        case "CHANGE_PIZZA_SIZE":
+            return {...store,
+                pizzaSize: action.payload
+            }
         default: 
             return store;
     }

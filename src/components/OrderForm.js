@@ -64,8 +64,7 @@ export default function OrderForm({ displayPrice }) {
                 addPrice={addPrice}
                 removePrice={removePrice}
             />
-            <ToppingContainer toppings={allOptions.toppings} addPrice={addPrice} removePrice={removePrice}/>
-            {displayTotalPrice()}
+            <ToppingContainer toppings={allOptions.toppings} />
             <button type="submit">Submit</button>
         </form>
     )
