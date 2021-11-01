@@ -42,15 +42,28 @@ export default function OrderForm({ displayPrice }) {
         return <p>${totalPrice.toFixed(2)}</p>
     }
 
+    const addTotalPrice = () => {
+        const pizzaPrice = JSON.parse(localStorage.getItem('pizzaSizeSelected'))[0].price
+        const deliveryPrice = JSON.parse(localStorage.getItem('selectedDelivery'))[0].price
+        const toppingsPrice = JSON.parse(localStorage.getItem('selectedToppings'))
+        console.log(toppingsPrice)
+    }
+
     return (
         <form onSubmit={handleSubmit}>
+            {addTotalPrice()}
             <DeliveryContainer 
                 delivery={allOptions.delivery}
                 displayOptions={displayOptions}
                 addPrice={addPrice}
                 removePrice={removePrice}
             />
-            <PizzaSizeContainer pizzaSizes={allOptions.pizzaSizes} displayOptions={displayOptions} addPrice={addPrice}/>
+            <PizzaSizeContainer 
+                pizzaSizes={allOptions.pizzaSizes} 
+                displayOptions={displayOptions} 
+                addPrice={addPrice}
+                removePrice={removePrice}
+            />
             <ToppingContainer toppings={allOptions.toppings} addPrice={addPrice} removePrice={removePrice}/>
             {displayTotalPrice()}
             <button type="submit">Submit</button>

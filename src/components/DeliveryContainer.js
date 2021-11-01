@@ -1,4 +1,3 @@
-import { remove } from 'dom-helpers'
 import { React, useEffect, useState } from 'react'
 
 export default function DeliveryContainer({ delivery, displayOptions, addPrice, removePrice }) {
