@@ -14,7 +14,7 @@ const defaultStore = {
         price: 18
     },
 
-    toppings: []
+    toppings: [],
 }
 
 

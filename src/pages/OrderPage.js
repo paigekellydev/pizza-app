@@ -9,19 +9,18 @@ export default function OrderPage() {
     const store = useSelector(store => store); // most people abbreviate store with s // s.selections
 
     
-    // const displayPrice = () => {
-    //     let totalPrice = 0
+    const displayPrice = () => {
+        let totalPrice = 0
 
-    //     Object.keys(selections).map(function(key) {
-    //         if (key === "toppings") {
-    //             selections[key].map(item => totalPrice += item.price)
-    //         } else {
-    //             totalPrice += selections[key].price
-    //         }
-    //     })
-    //     // selections.map(item => totalPrice += item.price)
-    //     return (totalPrice.toFixed(2))
-    // }
+        Object.keys(store).map(function(key) {
+            if (key === "toppings") {
+                store[key].map(item => totalPrice += item.price)
+            } else {
+                totalPrice += store[key].price
+            }
+        })
+        return (totalPrice.toFixed(2))
+    }
 
     const displaySelections = () => {
         return Object.keys(store).map(function(key) {
@@ -31,7 +30,7 @@ export default function OrderPage() {
                 })
             } else {
                 const item = store[key]
-                return <li key={item.displayName}>{item.displayName}</li>
+                return <li key={item.displayName}>{key} selections: {item.displayName}</li>
             }
         })
     }
@@ -44,6 +43,7 @@ export default function OrderPage() {
             <ul>
                 {displaySelections()}
             </ul>
+            {displayPrice()}
         </div>
     )
 }

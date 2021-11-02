@@ -1,24 +1,13 @@
 import { React, useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function PizzaSizeOptions({ pizzaSizes, displayOptions, removePrice, addPrice }) {
-    
-    const [pizzaSizeSelected, setPizzaSizeSelected] = useState([])
-    const [pizzaSizePrice, setPizzaSizePrice] = useState(0)
-    localStorage.setItem('pizzaSizeSelected', JSON.stringify([pizzaSizeSelected]))
-    
-    useEffect(() => {
-        if (pizzaSizes) {
-            setPizzaSizeSelected(pizzaSizes[0])
-            setPizzaSizePrice(pizzaSizes[0].price)
-            addPrice(pizzaSizePrice)
-        }
-    }, [pizzaSizes])
 
+    const selections = useSelector(store => store.selections); // most people abbreviate store with s // s.selections
+    const dispatch = useDispatch();
+    
     const handleChange = (event) => {
-        const selection = pizzaSizes[event.target.value]
-        const price = selection.price
-        setPizzaSizePrice(price)
-        setPizzaSizeSelected(selection)
+        dispatch({type: "CHANGE_PIZZA_SIZE", payload: pizzaSizes[event.target.value]})
     }
 
     return (
