@@ -1,18 +1,15 @@
-import { React, useState } from 'react'
 import OrderForm from '../components/OrderForm'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 
 export default function OrderPage() {
 
-    const [totalPrice, setTotalPrice] = useState(0)
     const store = useSelector(store => store); // most people abbreviate store with s // s.selections
-
     
     const displayPrice = () => {
         let totalPrice = 0
 
-        Object.keys(store).map(function(key) {
+        Object.keys(store).forEach(function(key) {
             if (key === "toppings") {
                 store[key].map(item => totalPrice += item.price)
             } else {
@@ -22,17 +19,22 @@ export default function OrderPage() {
         return (totalPrice.toFixed(2))
     }
 
-    const displaySelections = () => {
-        return Object.keys(store).map(function(key) {
-            if (key === "toppings") {
-                return store[key].map(item => {
-                    return <li key={item.displayName}>{item.displayName}</li>
-                })
-            } else {
-                const item = store[key]
-                return <li key={item.displayName}>{key} selections: {item.displayName}</li>
-            }
+    const displaySelectedToppings = () => {
+        return store.toppings.map(topping => {
+            return <li key={topping.displayName}>{topping.displayName}</li>
         })
+    }
+
+    const displaySelectedPizzaSize = () => {
+        return (
+            <p>Pizza Size Selected: {store.pizzaSize.displayName}</p>
+        )
+    }
+
+    const displaySelectedDelivery = () => {
+        return (
+            <p>Delivery Option Selected: {store.delivery.displayName}</p>
+        )
     }
 
     return (
@@ -40,8 +42,11 @@ export default function OrderPage() {
             <h1>Order Page</h1>
             <OrderForm />
             {/* <p>Price: ${ displayPrice() }</p> */}
+            {displaySelectedPizzaSize()}
+            {displaySelectedDelivery()}
+            <p>Toppings Selected:</p>
             <ul>
-                {displaySelections()}
+                {displaySelectedToppings()}
             </ul>
             {displayPrice()}
         </div>

@@ -1,9 +1,7 @@
-import { React, useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-export default function PizzaSizeOptions({ pizzaSizes, displayOptions, removePrice, addPrice }) {
+export default function PizzaSizeOptions({ pizzaSizes, displayOptions }) {
 
-    const selections = useSelector(store => store.selections); // most people abbreviate store with s // s.selections
     const dispatch = useDispatch();
     
     const handleChange = (event) => {
