@@ -15,6 +15,17 @@ const defaultStore = {
     },
 
     toppings: [],
+
+    contactInfo: {
+        firstName: "",
+        lastName: "",
+        phoneNumber: null,
+        email: "",
+        streetAddress: "",
+        state: "",
+        zipCode: "",
+        deliveryInstructions: "",
+    },
 }
 
 
@@ -36,6 +47,11 @@ function reducer(store, action) {
         case "CHANGE_PIZZA_SIZE":
             return {...store,
                 pizzaSize: action.payload
+            }
+        case "ADD_CONTACT_INFO":
+            const info = action.payload
+            return {...store,
+                contactInfo: {...store.contactInfo, info}
             }
         default: 
             return store;

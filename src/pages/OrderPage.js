@@ -19,29 +19,29 @@ export default function OrderPage() {
         return (totalPrice.toFixed(2))
     }
 
-    const displaySelectedToppings = () => {
-        return store.toppings.map(topping => {
-            return <li key={topping.displayName}>{topping.displayName}</li>
-        })
-    }
-
+    
     const displaySelectedPizzaSize = () => {
         return (
             <p>Pizza Size Selected: {store.pizzaSize.displayName}</p>
-        )
-    }
-
+            )
+        }
+        
     const displaySelectedDelivery = () => {
         return (
             <p>Delivery Option Selected: {store.delivery.displayName}</p>
         )
     }
-
+    
+    const displaySelectedToppings = () => {
+        return store.toppings.map(topping => {
+            return <li key={topping.displayName}>{topping.displayName}</li>
+        })
+    }
+            
     return (
         <div id="order-page" className="page">
             <h1>Order Page</h1>
             <OrderForm />
-            {/* <p>Price: ${ displayPrice() }</p> */}
             {displaySelectedPizzaSize()}
             {displaySelectedDelivery()}
             <p>Toppings Selected:</p>
