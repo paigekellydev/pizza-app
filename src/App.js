@@ -9,7 +9,8 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import WelcomePage from './pages/WelcomePage';
 import OrderPage from './pages/OrderPage';
-import ContactPage from './pages/ContactPage';
+import GetInTouch from './pages/GetInTouch';
+import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
           <Switch>
             <Route exact={ true } path="/" component={ WelcomePage } />
             <Route path="/order" component={ OrderPage } />
-            <Route path="/contact" component={ ContactPage }/>
+            <Route path="/contact" component={ GetInTouch }/>
+            <Route path="/confirmation" component={ ConfirmationPage }/>
           </Switch>
           <Footer />
         </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-export default function ToppingInput({ topping, addTopping, removeTopping }) {
+export default function ToppingInput({ topping }) {
 
     const [isChecked, setIsChecked] = useState(false);
     const dispatch = useDispatch();

@@ -12,14 +12,13 @@ export default function OrderPage() {
         Object.keys(store).forEach(function(key) {
             if (key === "toppings") {
                 store[key].map(item => totalPrice += item.price)
-            } else {
+            } else if (key === "delivery" || key === "pizzaSize") {
                 totalPrice += store[key].price
             }
         })
         return (totalPrice.toFixed(2))
     }
 
-    
     const displaySelectedPizzaSize = () => {
         return (
             <p>Pizza Size Selected: {store.pizzaSize.displayName}</p>

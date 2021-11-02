@@ -21,6 +21,9 @@ const defaultStore = {
         lastName: "",
         phoneNumber: null,
         email: "",
+    },
+
+    deliveryInfo: {
         streetAddress: "",
         state: "",
         zipCode: "",
@@ -49,9 +52,12 @@ function reducer(store, action) {
                 pizzaSize: action.payload
             }
         case "ADD_CONTACT_INFO":
-            const info = action.payload
             return {...store,
-                contactInfo: {...store.contactInfo, info}
+                contactInfo: {...store.contactInfo, [action.payload.key]: action.payload.value}
+            }
+        case "ADD_DELIVERY_INFO":
+            return {...store,
+                deliveryInfo: {...store.deliveryInfo, [action.payload.key]: action.payload.value}
             }
         default: 
             return store;

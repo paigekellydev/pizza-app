@@ -1,19 +1,1245 @@
 {
-  "posts": [
+  "options": {
+    "toppings": [
+      {
+        "name": "parmesan",
+        "price": 0.25,
+        "displayName": "Parmesan Cheese $0.25"
+      },
+      {
+        "name": "goatCheese",
+        "price": 0.5,
+        "displayName": "Goat Cheese $0.50"
+      },
+      {
+        "name": "arugula",
+        "price": 0.25,
+        "displayName": "Arugula $0.25"
+      },
+      {
+        "name": "mushrooms",
+        "price": 0.25,
+        "displayName": "Mushrooms $0.25"
+      },
+      {
+        "name": "prosciutto",
+        "price": 0.5,
+        "displayName": "Prosciutto $0.50"
+      }
+    ],
+    "delivery": [
+      {
+        "type": "pickUp",
+        "displayName": "Pick up",
+        "price": 0
+      },
+      {
+        "type": "delivery",
+        "displayName": "Delivery $10.00",
+        "price": 10
+      }
+    ],
+    "pizzaSizes": [
+      {
+        "type": "small",
+        "displayName": "Small: 16\" Pizza $18.00",
+        "price": 18
+      },
+      {
+        "type": "medium",
+        "displayName": "Medium: 18\" Pizza $22.00",
+        "price": 22
+      },
+      {
+        "type": "large",
+        "displayName": "Large: 22\" Pizza $26.00",
+        "price": 26
+      }
+    ]
+  },
+  "pizzaOrders": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "store": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          },
+          {
+            "name": "mushrooms",
+            "price": 0.25,
+            "displayName": "Mushrooms $0.25"
+          },
+          {
+            "name": "arugula",
+            "price": 0.25,
+            "displayName": "Arugula $0.25"
+          },
+          {
+            "name": "goatCheese",
+            "price": 0.5,
+            "displayName": "Goat Cheese $0.50"
+          },
+          {
+            "name": "prosciutto",
+            "price": 0.5,
+            "displayName": "Prosciutto $0.50"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "Paige",
+          "lastName": "Kelly",
+          "phoneNumber": "8319172674",
+          "email": "paigekellydev@gmail.com"
+        },
+        "deliveryInfo": {
+          "streetAddress": "7030 W Alaska D",
+          "state": "CO",
+          "zipCode": "80226",
+          "deliveryInstructions": "Contact less delivery"
+        }
+      },
+      "id": 5
+    },
+    {
+      "3Kelly": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          },
+          {
+            "name": "mushrooms",
+            "price": 0.25,
+            "displayName": "Mushrooms $0.25"
+          },
+          {
+            "name": "arugula",
+            "price": 0.25,
+            "displayName": "Arugula $0.25"
+          },
+          {
+            "name": "goatCheese",
+            "price": 0.5,
+            "displayName": "Goat Cheese $0.50"
+          },
+          {
+            "name": "prosciutto",
+            "price": 0.5,
+            "displayName": "Prosciutto $0.50"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "Paige",
+          "lastName": "Kelly",
+          "phoneNumber": "8319172674",
+          "email": "paigekellydev@gmail.com"
+        },
+        "deliveryInfo": {
+          "streetAddress": "7030 W Alaska D",
+          "state": "CO",
+          "zipCode": "80226",
+          "deliveryInstructions": "Contact less delivery"
+        }
+      },
+      "id": 6
+    },
+    {
+      "1": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 7
+    },
+    {
+      "store": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          },
+          {
+            "name": "goatCheese",
+            "price": 0.5,
+            "displayName": "Goat Cheese $0.50"
+          },
+          {
+            "name": "arugula",
+            "price": 0.25,
+            "displayName": "Arugula $0.25"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "sdasad",
+          "lastName": "dsadf",
+          "phoneNumber": "dsad",
+          "email": "dsada"
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 8
+    },
+    {
+      "store": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 9
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 10
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 11
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 12
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "dsada",
+          "lastName": "sda",
+          "phoneNumber": "sdaa",
+          "email": "sda"
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        },
+        "pizzaOrderId": null
+      },
+      "id": 13
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        },
+        "pizzaOrderId": null
+      },
+      "id": 14
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        },
+        "pizzaOrderId": null
+      },
+      "id": 15
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "dsaddsaasd",
+          "lastName": "sddsadasdad",
+          "phoneNumber": "sdaaddasdas",
+          "email": "sdaadasdasd"
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        },
+        "pizzaOrderId": null
+      },
+      "id": 16
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "medium",
+          "displayName": "Medium: 18\" Pizza $22.00",
+          "price": 22
+        },
+        "toppings": [
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          },
+          {
+            "name": "goatCheese",
+            "price": 0.5,
+            "displayName": "Goat Cheese $0.50"
+          },
+          {
+            "name": "arugula",
+            "price": 0.25,
+            "displayName": "Arugula $0.25"
+          },
+          {
+            "name": "mushrooms",
+            "price": 0.25,
+            "displayName": "Mushrooms $0.25"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "teets",
+          "lastName": "tetss",
+          "phoneNumber": "etetsts",
+          "email": "dsadsaa"
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        },
+        "pizzaOrderId": null
+      },
+      "id": 17
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [
+          {
+            "name": "goatCheese",
+            "price": 0.5,
+            "displayName": "Goat Cheese $0.50"
+          },
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          },
+          {
+            "name": "arugula",
+            "price": 0.25,
+            "displayName": "Arugula $0.25"
+          },
+          {
+            "name": "mushrooms",
+            "price": 0.25,
+            "displayName": "Mushrooms $0.25"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 18
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "delivery",
+          "displayName": "Delivery $10.00",
+          "price": 10
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 19
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 20
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 21
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 22
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 23
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 24
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 25
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 26
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 27
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 28
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 29
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 30
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 31
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 32
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 33
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 34
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 35
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 36
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 37
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 38
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "",
+          "lastName": "",
+          "phoneNumber": null,
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 39
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "medium",
+          "displayName": "Medium: 18\" Pizza $22.00",
+          "price": 22
+        },
+        "toppings": [
+          {
+            "name": "parmesan",
+            "price": 0.25,
+            "displayName": "Parmesan Cheese $0.25"
+          },
+          {
+            "name": "goatCheese",
+            "price": 0.5,
+            "displayName": "Goat Cheese $0.50"
+          }
+        ],
+        "contactInfo": {
+          "firstName": "padsasidas",
+          "lastName": "dfasiojfnasd",
+          "phoneNumber": "fdjnsfjkasdn",
+          "email": "dfkasfmask"
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 40
+    },
+    {
+      "orderInfo": {
+        "delivery": {
+          "type": "pickUp",
+          "displayName": "Pick up",
+          "price": 0
+        },
+        "pizzaSize": {
+          "type": "small",
+          "displayName": "Small: 16\" Pizza $18",
+          "price": 18
+        },
+        "toppings": [],
+        "contactInfo": {
+          "firstName": "padsasidsadasdaasj",
+          "lastName": "",
+          "phoneNumber": "",
+          "email": ""
+        },
+        "deliveryInfo": {
+          "streetAddress": "",
+          "state": "",
+          "zipCode": "",
+          "deliveryInstructions": ""
+        }
+      },
+      "id": 41
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+  "_comment": {
+    "message": "run npx json-server --watch db.json in order to fetch from this URL, make sure you're on port 3000"
   }
 }
